@@ -13,10 +13,19 @@ function App() {
   useEffect(() => {
     // request to api by axios
     
-    axios.get(`baseURL/keyword/${keyword}`).then((response) => {
+    axios.get(`${baseURL}`).then((response) => {
       setTrips(response.data);
     });
   }, []);
+
+  function getData(val) {
+    setKeyword(val.target.value)
+    // axios.get(`http://localhost:7777/api/trip/keyword/${keyword}`).then((response) => {
+    //   setTrips(response.data);
+    // });
+  }
+
+
 
   return (
     <>
@@ -25,7 +34,8 @@ function App() {
           <h1 className="font_header">เที่ยวไหนดี</h1>
           <input
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            // onChange={(e) => setKeyword(e.target.value)}
+            onChange={(val) => getData(val)}
             className="style-font text-center"
             type="text"
             name=""
