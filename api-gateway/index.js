@@ -1,5 +1,4 @@
 var app = require("express")();
-var users = require("./users");
 var trips = require("./db");
 
 var bodyParser = require("body-parser");
@@ -15,38 +14,24 @@ app.use(
 );
 
 app.get("/", function (req, res) {
-  res.send("<h1>Hello Node.js--2</h1>");
+  res.send("<h1>API-Gatewary Trips</h1>");
 });
 
-app.get("/user", function (req, res) {
-  res.json(users.findAll());
-});
 
-app.get("/trip", function (req, res) {
+app.get("/api/trip", function (req, res) {
+  res.status(200)
   res.json(trips.findAll());
 });
 
-app.get("/trips/:id", function (req, res) {
-  //   return Newsapp::where("News_Type","like","%".$News_Type."%")->get();
+app.get("/api/trip/:id", function (req, res) {
+  res.status(200)
   var id = req.params.id;
-  res.json(users.findById(id));
+  res.json(trips.findById(id));
 });
 
-app.get("/user/:id", function (req, res) {
-  //   return Newsapp::where("News_Type","like","%".$News_Type."%")->get();
-  var id = req.params.id;
-  res.json(users.findById(id));
-});
-
-// let search = "";
-// app.get(`/${search}`, function (req, res) {
-//   var id = req.params.id;
-//   res.json(users.findById(id));
-// });
-
-app.post("/newuser", function (req, res) {
-  var json = req.body;
-  res.send("Add new " + json.name + " Completed!");
+app.get("/api/trip/keyword/:tag" , function (req, res) {
+  res.status(200)
+  res.json(trips.findByTag(req.params.tag));
 });
 
 app.listen(port, function () {
