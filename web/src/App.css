@@ -1,20 +1,9 @@
-.App {
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #ffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +24,66 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Created by me */
+.style-font {
+  font-family: "Prompt", sans-serif;
+}
+.font_header {
+  font-weight: 400;
+  color: #1888de;
+  font-size: 3em;
+}
+.font_title {
+  font-family: "Prompt", sans-serif;
+  font-weight: normal;
+  color: #010c14;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #1888de;
+  background-color: transparent;
+  color: #404040;
+  font-size: 1em;
+  font-weight: 400;
+  width: 40%;
+  padding: 0.5em;
+  margin-bottom: 0.8em;
+}
+::placeholder {
+  color: #919191;
+  opacity: 1; /* Firefox */
+}
+
+h1 {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+header {
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: stretch;
+  align-items: stretch;
+  column-gap: 11px;
+  row-gap: 20px;
+}
+
+.content {
+  color: #242424;
+  background-color: #f25fff;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
 }
