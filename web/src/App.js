@@ -4,7 +4,7 @@ import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const baseURL = `http://localhost:7777/api/trip`;
+const baseURL = `https://wnmytrip.herokuapp.com/api/trip`;
 
 function App() {
   const [trips, setTrips] = useState([]);
